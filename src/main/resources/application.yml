@@ -3,11 +3,11 @@ spring:
      application:
           name: spirng-boot-rabbitmq
      rabbitmq:
-          host: 192.168.13.64
+          host: 192.168.1.106
           port: 5672
-          username: test
-          password: test
-          virtualHost: /test
-          exchange: EXCHANGE_DIRECT_ORDER_MARKET 
-          queue: QUEUE_ISSUED_NAME_LIST_MARKET
+          username: hbsit
+          password: hbsit
+          virtualHost: /hbsit
+          exchange: EXCHANGE_DIRECT_TEST 
+          queue: QUEUE_TEST
           bean: rabbitTemplate

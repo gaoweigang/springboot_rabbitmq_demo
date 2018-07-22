@@ -57,7 +57,7 @@ public class RabbitConfig {
 	
 	// 必须要生成bean，否则如果不会自动生成该EXCHANGE
 	@Bean
-	DirectExchange newOrderExchange() {
+	DirectExchange exchange() {
 		return new DirectExchange(exchangeName, true, true);
 	}
 
@@ -73,8 +73,8 @@ public class RabbitConfig {
 	 * 将交换器 与  队列 进行绑定，并指定队列名称
 	 */
 	@Bean
-	Binding bindingOrderNewKyp() {
-		return BindingBuilder.bind(Queue()).to(newOrderExchange()).with(queueName);
+	Binding binding() {
+		return BindingBuilder.bind(Queue()).to(exchange()).with(queueName);
 	}
 
 	@Bean(name = "${spring.rabbitmq.bean}")
